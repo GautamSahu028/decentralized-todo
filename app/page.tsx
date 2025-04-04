@@ -4,6 +4,7 @@ import Head from "next/head";
 import WalletConnect from "../components/WalletConnect";
 import TodoList from "../components/TodoList";
 import { useWallet } from "../context/WalletContext";
+import Link from "next/link";
 
 export default function Home() {
   const { isConnected } = useWallet();
@@ -37,7 +38,17 @@ export default function Home() {
               Connect your wallet to access your decentralized todo list
             </p>
             <p className="text-sm text-gray-500">
-              Make sure you are connected to the Sepolia testnet
+              Make sure you are connected to the Sepolia testnet and have some
+              sepoliaEth in your wallet.
+            </p>
+            <p className="text-sm text-gray-500">
+              To air drop some sepoliaEth{" "}
+              <Link
+                href={`https://cloud.google.com/application/web3/faucet/ethereum/sepolia`}
+                className="text-blue-500 hover:underline"
+              >
+                click here
+              </Link>
             </p>
           </div>
         )}
